@@ -3,6 +3,7 @@
 There were no basic projects out there to simply test MIDI CC commands.
 So here is my quick hacked-up project.
 
+![screenshot](screenshot.png?raw=true "Screenshot")
 
 # Instructions
 
