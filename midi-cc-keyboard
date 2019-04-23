@@ -13,7 +13,7 @@ midi_out_ports = midi_out.get_ports()
 if midi_out_ports:
 	midi_out.open_port(0)
 else:
-	midi_out.open_virtual_port("midi-cc-test")
+	midi_out.open_virtual_port("midi-cc-keyboard")
 
 
 
@@ -41,7 +41,7 @@ def slider_event(controller, data):
 # gui
 
 root = tk.Tk()
-root.title("midi-cc-test")
+root.title("midi-cc-keyboard")
 
 top_content = tk.Frame(root)
 top_content.grid(column=0, row=0)
@@ -71,7 +71,7 @@ def slider(controller, row, col, label):
 	w.grid(column=col, row=(row*2)+2)
 
 rows = 4
-cols = 24
+cols = 32
 
 for row in range(rows):
 	for col in range(cols):
