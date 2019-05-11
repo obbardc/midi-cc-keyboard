@@ -41,11 +41,13 @@ def midi_in_callback(message, callb_data):
 	if (midi_data[0] & 0x0f) != (midi_channel-1):
 		return
 
+	# log cc message
+	print("midi rx cc: " + hex(midi_data[0]) + " " + hex(midi_data[1]) + " " + hex(midi_data[2]))
+
 	# modify slider value
 	slider_idx = midi_data[1]
 	slider_val = midi_data[2]
 	gui_sliders[slider_idx].set(slider_val)
-	print("midi rx cc: " + hex(midi_data[0]) + " " + hex(midi_data[1]) + " " + hex(midi_data[2]))
 
 
 midi_in.set_callback(midi_in_callback)
