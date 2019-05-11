@@ -98,11 +98,13 @@ def slider(controller, row, col, label):
 
 	evt_handler = lambda value : slider_event(controller, int(value))
 
-	w = tk.Scale(content, from_=127, to=0, command=evt_handler)
+	# store the slider value seperately so sliding events do not
+	# trigger when setting value progmatically
+	val = tk.IntVar()
+	w = tk.Scale(content, from_=127, to=0, command=evt_handler, variable=val)
 
-	# hack: append to a global list of sliders to reference later
-	# this is probably (hopefully) stored inside tkinker somewhere (?)
-	gui_sliders.append(w)
+	# hack: append to a global list of slider values to reference later
+	gui_sliders.append(val)
 
 	w.set(0)
 	w.grid(column=col, row=(row*2)+1)
