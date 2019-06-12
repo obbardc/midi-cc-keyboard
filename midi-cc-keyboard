@@ -11,13 +11,13 @@ gui_sliders = []
 
 
 # open midi input
-midi_in = rtmidi.MidiIn(name="Midi CC Keyboard")
+midi_in = rtmidi.MidiIn(name="Midi CC Keyboard In")
 midi_in_ports = midi_in.get_ports()
 midi_in.ignore_types(sysex=False, timing=False, active_sense=False)
 midi_in.open_virtual_port("In")
 
 # open midi output
-midi_out = rtmidi.MidiOut(name="Midi CC Keyboard")
+midi_out = rtmidi.MidiOut(name="Midi CC Keyboard Out")
 midi_out_ports = midi_out.get_ports()
 midi_out.open_virtual_port("Out")
 
